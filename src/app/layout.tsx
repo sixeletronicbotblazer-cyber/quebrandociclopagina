@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/assets/expert-hero.webp",
-        width: 1672,
-        height: 941,
+        width: 1920,
+        height: 1080,
         alt: "Natália Cavalcante, nutricionista criadora do Método Quebrando o Ciclo",
       },
     ],
