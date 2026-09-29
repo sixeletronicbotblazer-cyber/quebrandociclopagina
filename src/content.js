@@ -36,6 +36,24 @@ export const PAIN = {
   bridge: "Quem mantém a constância não é quem acerta tudo. É quem sabe o que fazer no dia seguinte.",
 };
 
+export const COST = {
+  eyebrow: "O CICLO QUE SAI CARO",
+  title: "R$500 por mais uma dieta que acaba na sexta?",
+  problem1:
+    "A consulta termina. A rotina te engole. A dieta fica esquecida e, na segunda, você começa tudo de novo.",
+  problem2:
+    "O problema não é falta de vontade. É tentar mudar seus hábitos com orientações que não entram na sua vida real.",
+  impact: "Menos sermão. Mais ação.",
+  solution:
+    "No Método Quebrando o Ciclo, você tem 14 aulas para entender o que acontece com você e um aplicativo para colocar tudo em prática. Missões, checklist, receitas e seu progresso à vista. Um jeito mais leve e interativo de continuar, mesmo nos dias em que a rotina aperta.",
+  image: "/assets/app-inicio.webp",
+  imageAlt: "Aplicativo Quebrando o Ciclo mostrando o progresso do dia e as ações rápidas",
+  offerLead: "Tudo isso por",
+  offerPay: "em pagamento único",
+  offerRest: "Menos que uma consulta e com ferramentas para usar no dia a dia.",
+  cta: "Quero quebrar esse ciclo",
+};
+
 export const APP = {
   title: "O app que mostra",
   titleAccent: "o que fazer hoje.",

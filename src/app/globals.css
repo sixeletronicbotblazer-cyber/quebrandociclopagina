@@ -247,6 +247,84 @@ button:focus-visible,
 .pain-bottom strong { color: #36702c; }
 
 /* ============================================================
+   CUSTO — consulta tradicional × método
+   ============================================================ */
+.cost {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 10%, #2e5738, transparent 44%),
+    radial-gradient(circle at 6% 94%, #1d3a2c, transparent 46%),
+    #11271e;
+  color: #fff;
+}
+.cost-layout {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(38px, 5vw, 72px);
+  align-items: center;
+}
+.cost-copy h2 {
+  margin: 13px 0 22px;
+  max-width: 17ch;
+  font-size: clamp(2.1rem, 3.6vw, 3.3rem);
+}
+.cost-p {
+  max-width: 46ch;
+  margin-bottom: 14px;
+  color: #c9d6c8;
+  font-size: 1.05rem;
+  line-height: 1.66;
+}
+.cost-impact {
+  margin: 26px 0;
+  color: var(--lime);
+  font: 800 clamp(1.85rem, 4vw, 2.9rem) / 1.05 var(--font-manrope), sans-serif;
+  letter-spacing: -0.04em;
+}
+.cost-solution {
+  max-width: 50ch;
+  color: #d9e4d4;
+  font-size: 1.07rem;
+  line-height: 1.7;
+}
+.cost-card {
+  padding: 28px 26px;
+  border-radius: 26px;
+  background: var(--paper);
+  box-shadow: 0 26px 60px rgba(4, 18, 12, 0.35);
+  text-align: center;
+}
+.cost-card > img {
+  width: auto;
+  height: clamp(180px, 21vw, 240px);
+  margin: 0 auto 4px;
+  filter: drop-shadow(0 14px 20px rgba(21, 49, 31, 0.2));
+}
+.cost-price-block { margin-top: 10px; }
+.cost-offer-lead,
+.cost-offer-pay {
+  display: block;
+  color: #526d56;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.cost-price {
+  display: block;
+  margin: 2px 0 0;
+  color: #315f39;
+  font: 800 clamp(2.9rem, 5.5vw, 3.9rem) / 1.02 var(--font-manrope), sans-serif;
+  letter-spacing: -0.05em;
+}
+.cost-offer-rest {
+  margin: 14px auto 18px;
+  max-width: 30ch;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+.cost-card .btn { width: 100%; }
+
+/* ============================================================
    APP (PRÉVIAS)
    ============================================================ */
 .app-section { overflow: hidden; background: linear-gradient(180deg, #eef4e8, #f9faf4); }
@@ -749,6 +827,13 @@ button:focus-visible,
   .hero-copy { max-width: 650px; }
   .mechanism-layout, .routine-layout { gap: 35px; }
   .receive-grid { gap: 10px; }
+
+  .cost-layout { grid-template-columns: 1fr; gap: 44px; }
+  .cost-copy { text-align: center; }
+  .cost-copy h2,
+  .cost-p,
+  .cost-solution { margin-inline: auto; }
+  .cost-card { width: min(100%, 400px); margin-inline: auto; }
 }
 
 @media (max-width: 700px) {
@@ -829,6 +914,19 @@ button:focus-visible,
   .pain-quote { padding: 22px; margin-top: 36px; }
   .pain-quote blockquote { font-size: 1.03rem; }
   .pain-bottom { font-size: 1.02rem; }
+
+  .cost-layout { gap: 36px; }
+  .cost-copy h2 { font-size: clamp(1.8rem, 7.4vw, 2.55rem); }
+  .cost-p { font-size: 1rem; }
+  .cost-impact {
+    margin: 22px 0;
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+  }
+  .cost-solution { font-size: 1.02rem; }
+  .cost-card { padding: 24px 20px; }
+  .cost-card > img { height: 168px; }
+  .cost-price { font-size: clamp(2.6rem, 10.5vw, 3.2rem); }
+  .cost-offer-rest { font-size: 0.94rem; }
 
   .app-marquee { padding: 12px 0 24px; }
   .app-marquee-track { animation-duration: 36s; }

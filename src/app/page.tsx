@@ -20,6 +20,7 @@ import {
 import {
   HERO,
   PAIN,
+  COST,
   APP,
   METHOD,
   SHIFT,
@@ -125,6 +126,38 @@ export default function Home() {
             <p className="pain-bottom">
               <strong>{PAIN.bridge}</strong>
             </p>
+          </div>
+        </section>
+
+        {/* ---------- CUSTO — consulta tradicional × método ---------- */}
+        <section className="section cost dark" aria-labelledby="cost-title">
+          <div className="container cost-layout">
+            <div className="cost-copy reveal">
+              <span className="eyebrow">{COST.eyebrow}</span>
+              <h2 id="cost-title">{COST.title}</h2>
+              <p className="cost-p">{COST.problem1}</p>
+              <p className="cost-p">{COST.problem2}</p>
+              <p className="cost-impact">{COST.impact}</p>
+              <p className="cost-solution">{COST.solution}</p>
+            </div>
+            <div className="cost-card reveal">
+              <img
+                src={COST.image}
+                alt={COST.imageAlt}
+                width={1122}
+                height={1402}
+                loading="lazy"
+              />
+              <div className="cost-price-block">
+                <span className="cost-offer-lead">{COST.offerLead}</span>
+                <strong className="cost-price">{PRICE}</strong>
+                <span className="cost-offer-pay">{COST.offerPay}</span>
+              </div>
+              <p className="cost-offer-rest">{COST.offerRest}</p>
+              <a className="btn" href="#oferta">
+                {COST.cta}
+              </a>
+            </div>
           </div>
         </section>
 
