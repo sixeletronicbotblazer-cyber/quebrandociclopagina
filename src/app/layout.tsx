@@ -1,6 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
+import { PRICE } from "@/comercial";
+
+/** URL pública definitiva da página (deploy Vercel do repo quebrandociclopagina). */
+const SITE_URL = "https://quebrandociclopagina.vercel.app";
+
+/** Preço em formato numérico para dados estruturados (49.90), derivado de PRICE. */
+const PRICE_SCHEMA = PRICE.replace("R$ ", "").replace(",", ".");
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -15,16 +22,35 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://quebrandoociclo.com.br"),
-  title: "Método Quebrando o Ciclo | R$ 49,90",
+  metadataBase: new URL(SITE_URL),
+  title: "Método Quebrando o Ciclo | 14 Aulas e Aplicativo",
   description:
-    "Método Quebrando o Ciclo: 14 aulas, aplicativo e materiais práticos para construir hábitos alimentares com mais consciência e constância. Acesso por R$ 49,90.",
+    "Entenda seus hábitos e aprenda a continuar com 14 aulas, aplicativo interativo e materiais práticos. Acesso por R$49,90 em pagamento único.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Método Quebrando o Ciclo",
+    title: "Método Quebrando o Ciclo | 14 Aulas e Aplicativo",
     description:
-      "14 aulas, aplicativo e ferramentas para sair do ciclo do recomeço. Acesso por R$ 49,90.",
+      "Entenda seus hábitos e aprenda a continuar com 14 aulas, aplicativo interativo e materiais práticos. Acesso por R$49,90 em pagamento único.",
+    url: SITE_URL,
+    siteName: "Método Quebrando o Ciclo",
+    locale: "pt_BR",
     type: "website",
-    images: ["/assets/expert-hero.webp"],
+    images: [
+      {
+        url: "/assets/expert-hero.webp",
+        width: 1672,
+        height: 941,
+        alt: "Natália Cavalcante, nutricionista criadora do Método Quebrando o Ciclo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Método Quebrando o Ciclo | 14 Aulas e Aplicativo",
+    description:
+      "Entenda seus hábitos e aprenda a continuar com 14 aulas, aplicativo interativo e materiais práticos. Acesso por R$49,90 em pagamento único.",
   },
 };
 
@@ -32,6 +58,23 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#07120d",
+};
+
+/** Dados estruturados: um único Product + Offer, sem dados não confirmados. */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Método Quebrando o Ciclo",
+  description:
+    "Programa digital de educação alimentar com 14 aulas em dois módulos, aplicativo interativo com missões, checklist e receitas, e materiais práticos de consulta.",
+  image: `${SITE_URL}/assets/app-mockup-premium.webp`,
+  url: `${SITE_URL}/`,
+  offers: {
+    "@type": "Offer",
+    price: PRICE_SCHEMA,
+    priceCurrency: "BRL",
+    url: `${SITE_URL}/`,
+  },
 };
 
 export default function RootLayout({
@@ -56,6 +99,10 @@ export default function RootLayout({
           href="/assets/expert-hero.webp"
           media="(min-width: 701px)"
           fetchPriority="high"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
       </body>
