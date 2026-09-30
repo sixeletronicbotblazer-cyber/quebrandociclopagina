@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/expert-hero.webp",
+        url: "/assets/hero-natalia-rosa-desktop-1920x1080.webp",
         width: 1920,
         height: 1080,
         alt: "Natália Cavalcante, nutricionista criadora do Método Quebrando o Ciclo",
@@ -89,14 +89,14 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/assets/hero-mobile-natalia.webp"
+          href="/assets/hero-natalia-rosa-mobile-1080x1600.webp"
           media="(max-width: 700px)"
           fetchPriority="high"
         />
         <link
           rel="preload"
           as="image"
-          href="/assets/expert-hero.webp"
+          href="/assets/hero-natalia-rosa-desktop-1920x1080.webp"
           media="(min-width: 701px)"
           fetchPriority="high"
         />

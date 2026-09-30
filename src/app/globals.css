@@ -131,7 +131,7 @@ button:focus-visible,
   position: absolute;
   z-index: -2;
   inset: 0;
-  background: url("/assets/expert-hero.webp") center 30% / cover no-repeat;
+  background: url("/assets/hero-natalia-rosa-desktop-1920x1080.webp") center 12% / cover no-repeat;
 }
 .hero:after {
   content: "";
@@ -139,8 +139,8 @@ button:focus-visible,
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(90deg, #0d241b 0%, rgba(13, 36, 27, 0.72) 26%, rgba(13, 36, 27, 0.42) 46%, rgba(13, 36, 27, 0) 62%),
-    linear-gradient(0deg, rgba(13, 36, 27, 0.5), transparent 20%);
+    linear-gradient(90deg, #0d241b 0%, rgba(13, 36, 27, 0.6) 26%, rgba(13, 36, 27, 0.26) 46%, rgba(13, 36, 27, 0) 60%),
+    linear-gradient(0deg, rgba(13, 36, 27, 0.3), transparent 15%);
 }
 .brand-row { display: flex; align-items: center; justify-content: space-between; padding: 31px 0; }
 .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; }
@@ -475,7 +475,16 @@ button:focus-visible,
 .routine { background: #fffdf8; }
 .routine-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
 .routine-photo { position: relative; overflow: hidden; border-radius: 27px; background: var(--night); }
-.routine-photo img { width: 100%; height: 540px; object-fit: cover; object-position: center 22%; }
+.routine-photo img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  object-position: center 22%;
+  /* Enquadramento: amplia ~6% e sobe o conteudo (~72px no espaco da imagem)
+     ancorado na base, sem cortar cabelo, queixo ou mao. */
+  transform: scale(1.06);
+  transform-origin: 50% 100%;
+}
 .routine-copy h2 { margin: 17px 0; }
 .routine-copy > p { margin-bottom: 24px; color: var(--muted); font-size: 1.08rem; line-height: 1.65; }
 .routine-points { display: grid; gap: 12px; margin: 0 0 26px; padding: 0; list-style: none; }
@@ -810,11 +819,11 @@ button:focus-visible,
    ============================================================ */
 @media (max-width: 900px) {
   .hero { min-height: 720px; }
-  .hero:before { background-position: 56% 20%; }
+  .hero:before { background-position: 56% 14%; }
   .hero:after {
     background:
-      linear-gradient(90deg, #0d241b 0%, rgba(13, 36, 27, 0.88) 32%, rgba(13, 36, 27, 0.45) 56%, rgba(13, 36, 27, 0) 68%),
-      linear-gradient(0deg, rgba(13, 36, 27, 0.5), transparent 22%);
+      linear-gradient(90deg, #0d241b 0%, rgba(13, 36, 27, 0.82) 30%, rgba(13, 36, 27, 0.42) 54%, rgba(13, 36, 27, 0) 66%),
+      linear-gradient(0deg, rgba(13, 36, 27, 0.3), transparent 15%);
   }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { max-width: 400px; }
@@ -857,37 +866,43 @@ button:focus-visible,
   .section-head { margin-bottom: 36px; }
   .section-head h2 { font-size: clamp(1.8rem, 7.4vw, 2.55rem); }
 
-  /* Hero mobile: foto de fundo da Natália (peça única) */
+  /* Hero mobile: foto da Natália no alto (bloco proprio) + texto sobre o
+     degradê verde inferior. O rosto fica sempre acima da area de texto. */
   .hero { min-height: 0; }
   .hero:before {
-    background-image: url("/assets/hero-mobile-natalia.webp");
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: max(96vw, 52%);
+    background-image: url("/assets/hero-natalia-rosa-mobile-1080x1600.webp");
     background-size: cover;
     background-position: center top;
   }
   .hero:after {
-    background:
-      linear-gradient(180deg, rgba(13, 36, 27, 0.22) 0%, rgba(13, 36, 27, 0) 12%),
-      linear-gradient(
-        0deg,
-        rgba(13, 36, 27, 0.66) 0%,
-        rgba(13, 36, 27, 0.5) 14%,
-        rgba(13, 36, 27, 0.32) 30%,
-        rgba(13, 36, 27, 0.1) 46%,
-        rgba(13, 36, 27, 0) 60%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(13, 36, 27, 0.18) 0%,
+      rgba(13, 36, 27, 0) 9%,
+      rgba(13, 36, 27, 0) 38%,
+      rgba(13, 36, 27, 0.55) 46%,
+      rgba(13, 36, 27, 0.93) 52%,
+      #0d241b 58%,
+      #0d241b 100%
+    );
   }
   .brand-row { padding: 21px 0; }
   .hero-grid {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: clamp(540px, 86svh, 690px);
-    padding: 58px 0 72px;
+    min-height: clamp(540px, 86svh, 780px);
+    padding: 24px 0 64px;
   }
   .hero-copy { max-width: 420px; padding-top: 0; text-align: center; }
   .hero h1 {
     max-width: 420px;
-    margin: 15px 0 18px;
+    margin: 12px 0 14px;
     font-size: clamp(1.8rem, 7.8vw, 2.65rem);
     text-wrap: balance;
   }
@@ -897,7 +912,7 @@ button:focus-visible,
     font-size: 0.98rem;
     line-height: 1.62;
   }
-  .hero-actions { justify-content: center; margin-top: 28px; }
+  .hero-actions { justify-content: center; margin-top: 22px; }
   .hero-actions .btn { width: 100%; }
 
   .pain-list { grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -973,6 +988,12 @@ button:focus-visible,
 
 @media (min-width: 701px) {
   .sticky-cta { display: none; }
+}
+
+/* Telas muito largas: hero um pouco mais alto para o enquadramento da foto
+   nao cortar o queixo (imagem desktop 1920x1080 e um close). */
+@media (min-width: 1800px) {
+  .hero { min-height: 850px; }
 }
 
 @media (max-width: 470px) {
