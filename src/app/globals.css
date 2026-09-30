@@ -474,26 +474,12 @@ button:focus-visible,
    ============================================================ */
 .routine { background: #fffdf8; }
 .routine-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-.routine-photo { position: relative; overflow: hidden; border-radius: 27px; background: var(--night); padding-bottom: 56px; }
+.routine-photo { position: relative; overflow: hidden; border-radius: 27px; background: var(--night); }
 .routine-photo img {
   width: 100%;
-  height: 540px;
+  height: 548px;
   object-fit: cover;
-  object-position: center 22%;
-  /* Enquadramento: amplia ~6% e sobe o conteudo (~72px no espaco da imagem)
-     ancorado na base, sem cortar cabelo, queixo ou mao. */
-  transform: scale(1.06);
-  transform-origin: 50% 100%;
-}
-/* Base do card: folga escura abaixo da foto para o braco da nutricionista
-   nao encostar na borda inferior do card (foto sobe ~56px). */
-.routine-photo::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 150px;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(16, 37, 30, 0) 0%, rgba(16, 37, 30, 0.55) 55%, #10251e 100%);
+  object-position: center center;
 }
 .routine-copy h2 { margin: 17px 0; }
 .routine-copy > p { margin-bottom: 24px; color: var(--muted); font-size: 1.08rem; line-height: 1.65; }
@@ -961,14 +947,12 @@ button:focus-visible,
   .shift-head span { padding: 12px; font-size: 0.68rem; }
 
   .routine-layout { display: flex; flex-direction: column; gap: 34px; }
-  /* Mobile: folga escura menor (proporcional ao card de ~350px). */
-  .routine-photo { order: -1; width: min(100%, 350px); margin-inline: auto; border-radius: 24px; padding-bottom: 46px; }
-  .routine-photo::after { height: 120px; }
+  .routine-photo { order: -1; width: min(100%, 350px); margin-inline: auto; border-radius: 24px; }
   .routine-photo img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    height: 355px;
     object-fit: cover;
+    object-position: center center;
   }
   .routine-copy h2 { font-size: clamp(1.8rem, 7.4vw, 2.55rem); }
   .routine-copy > p { font-size: 1rem; }

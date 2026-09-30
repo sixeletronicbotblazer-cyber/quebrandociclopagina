@@ -131,7 +131,7 @@ export const SHIFT = {
 };
 
 export const NATALIA = {
-  photo: "/assets/expert-portrait.webp",
+  photo: "/assets/expert-retrato-natural-sem-degrade-1200x1400.webp",
   photoAlt: "Natália Cavalcante, nutricionista criadora do método",
   title: "Feito por uma nutricionista,",
   titleAccent: "para quem cansou de recomeçar.",

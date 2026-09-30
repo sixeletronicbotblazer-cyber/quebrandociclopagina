@@ -320,7 +320,7 @@ export default function Home() {
                 src={NATALIA.photo}
                 alt={NATALIA.photoAlt}
                 width={1200}
-                height={1200}
+                height={1400}
                 loading="lazy"
               />
             </div>
